@@ -1,11 +1,11 @@
 class Plane
 
   def initialize 
-    grounded
+    flying
   end
 
   def in_flight?
-    @in_flight 
+    @in_flight ? "Flying" : "Grounded"
   end
 
   def take_off
@@ -16,8 +16,8 @@ class Plane
     @in_flight = false
   end
 
-  def grounded
-    @in_flight = false
+  def flying
+    @in_flight = true
   end
 
 end
