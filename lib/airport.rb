@@ -1,4 +1,8 @@
+require_relative "weather"
+
 class Airport
+
+  include Weather
 
   DEFAULT_CAPACITY = 6
 
@@ -11,20 +15,29 @@ class Airport
   end
 
   def land(plane)
-    if plane_count < DEFAULT_CAPACITY
+    if sunny? && plane_count < DEFAULT_CAPACITY
     @planes << plane
     else
-      raise "Sorry the airport is full!"
+      raise "Sorry the plane cannot land!"
     end
     plane_count
   end
 
   def take_off(plane)
-    @planes.reject! {|frog| frog == plane}
+    if sunny?
+      @planes.reject! {|frog| frog == plane}
+    else
+      raise "Sorry the plane cannot land!"
+    end
+    plane_count
   end
 
   def plane_count
     @planes.count
+  end
+
+  def sunny?
+    forecast == "sunny"
   end
 
 end
