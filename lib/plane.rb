@@ -5,7 +5,7 @@ class Plane
   end
 
   def in_flight?
-    @in_flight ? "Flying" : "Grounded"
+    @in_flight ? "Flying" : "Landed"
   end
 
   def take_off

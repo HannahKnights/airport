@@ -1,27 +1,7 @@
-class Weather
-  
-  def initialize
-    weather
-  end
-
-  def weather
-    weather_frequency = []
-    weather_frequency.fill("sunny", 0, 50)
-    weather_frequency.fill("stormy", 0, 1)
-  end
+module Weather
 
   def forecast
-    weather.sample
+    Array(1..50).sample == 1 ? "stormy" : "sunny"
   end
   
-  def count
-    weather.count
-  end
-
-  def count_stormy
-  weather_stormy = []
-  weather_stormy = weather.reject {|s| s == "sunny"}
-  weather_stormy.count
-  end
-
 end

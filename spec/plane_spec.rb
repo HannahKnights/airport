@@ -18,25 +18,11 @@ describe Plane do
     expect(plane.in_flight?).to eq("Flying")
   end
 
-  # it "should start on the runway of the airport" do
-  #   expect(plane.in_flight?).to be_false
-  # end
-
-  # it "should be able to take off" do
-  #   plane.take_off
-  #   expect(plane.in_flight?).to be_true
-  # end
-
-  # it "should be able to land" do
-  #   plane.take_off
-  #   plane.land
-  #   expect(plane.in_flight?).to be_false
-  # end
-
-  # it "should be able to land when it is sunny" do
-  #   plane.take_off
-  #   sunny = double("sunny")
-  #   expect(plane.can_I_land).to eq("Yes")
-  # end
+  it "changes it's status to flying after taking off" do
+    plane.land
+    expect(plane.in_flight?).to eq("Landed")
+    plane.take_off
+    expect(plane.in_flight?).to eq("Flying")
+  end
 
 end
