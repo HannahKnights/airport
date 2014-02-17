@@ -25,7 +25,7 @@ class Airport
 
   def take_off(plane)
     if sunny?
-      @planes.reject! {|frog| frog == plane}
+      @planes.reject! {|plane| plane == plane}
     else
       raise "Sorry the plane cannot land!"
     end
